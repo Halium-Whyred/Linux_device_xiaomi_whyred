@@ -157,8 +157,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # Doze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
+# PRODUCT_PACKAGES += \
+#     XiaomiDoze
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -167,7 +167,7 @@ PRODUCT_PACKAGES += \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwpa_client \
-    hostapd \
+#    hostapd \
     dhcpcd.conf \
     wificond \
     libwifi-hal-qcom \
@@ -191,8 +191,8 @@ PRODUCT_PACKAGES += \
     telephony-ext \
     ims-ext-common
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+# PRODUCT_BOOT_JARS += \
+#     telephony-ext
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -312,8 +312,8 @@ PRODUCT_PACKAGES += \
     services-ext
 
 # Healthd
-PRODUCT_PACKAGES += \
-    chargeonlymode
+# PRODUCT_PACKAGES += \
+#     chargeonlymode
 
 # HIDL
 PRODUCT_PACKAGES += \
