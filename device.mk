@@ -28,8 +28,8 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-mokee
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
+# PRODUCT_ENFORCE_RRO_TARGETS := \
+#     framework-res
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -129,30 +129,31 @@ PRODUCT_PACKAGES += \
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
 # Exclude TOF sensor from InputManager
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
 
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library
+# # ANT+
+# PRODUCT_PACKAGES += \
+#     AntHalService \
+#     com.dsi.ant.antradio_library
 
-PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
+# PRODUCT_COPY_FILES += \
+#     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
 
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    libxml2 \
-    Snap
+    libxml2
+#     Snap
 
 # CNE
-PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne
+# PRODUCT_PACKAGES += \
+#     cneapiclient \
+#     com.quicinc.cne
 
 # Display
 PRODUCT_PACKAGES += \
@@ -177,8 +178,8 @@ PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 
 # Doze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
+# PRODUCT_PACKAGES += \
+#     XiaomiDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -190,11 +191,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/init.qti.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qseecomd.sh
 
 # Fingerprint feature
-PRODUCT_PACKAGES += \
-    fingerprintd
+# PRODUCT_PACKAGES += \
+#     fingerprintd
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
+# PRODUCT_COPY_FILES += \
+#     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 #FM
 PRODUCT_PACKAGES += \
@@ -246,8 +247,8 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0-java
 
 # IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common
+# PRODUCT_PACKAGES += \
+#     ims-ext-common
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -296,8 +297,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sdm660
 
 # LiveDisplay native
-PRODUCT_PACKAGES += \
-    vendor.mokee.livedisplay@1.0-service-sdm
+# PRODUCT_PACKAGES += \
+#     vendor.mokee.livedisplay@1.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -350,8 +351,8 @@ PRODUCT_PACKAGES += \
     libjson
 
 # XiaomiParts
-PRODUCT_PACKAGES += \
-    XiaomiParts
+# PRODUCT_PACKAGES += \
+#     XiaomiParts
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -404,11 +405,11 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service
 
 # Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
+# PRODUCT_PACKAGES += \
+#     telephony-ext
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+# PRODUCT_BOOT_JARS += \
+#     telephony-ext
 
 # TextClassifier
 PRODUCT_PACKAGES += \
@@ -432,18 +433,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += vndk-sp
 
 # Soter
-PRODUCT_PACKAGES += \
-    soter
+# PRODUCT_PACKAGES += \
+#     soter
 
-PRODUCT_BOOT_JARS += \
-    soter
+# PRODUCT_BOOT_JARS += \
+#     soter
 
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     dhcpcd.conf \
-    hostapd \
-    hostapd_cli \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwifi-hal-qcom \
@@ -453,6 +452,8 @@ PRODUCT_PACKAGES += \
     wifilogd \
     wpa_supplicant \
     wpa_supplicant.conf
+#     hostapd \
+#     hostapd_cli \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \

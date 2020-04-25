@@ -48,7 +48,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3 audit=0 selinux=0 console=tty0
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -59,14 +59,20 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/whyred
 TARGET_KERNEL_CONFIG := whyred-perf_defconfig
-TARGET_KERNEL_CLANG_COMPILE := true
+# TARGET_KERNEL_CLANG_COMPILE := true
+
+# System-As-Root [SAR]
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+
+# Disable FakeSensorServer so UBports can use it
+MINIMEDIA_SENSORSERVER_DISABLE := 1
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USE_SDCLANG := true
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+# BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Assert
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
@@ -204,6 +210,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USES_INTERACTION_BOOST := true
 
 # Recovery
+TARGET_NO_RECOVERY := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 
 # Releasetools
@@ -211,7 +218,7 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_whyred
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # RIL
-TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+# TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_RIL_VARIANT := caf
 
 # Seccomp
