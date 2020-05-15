@@ -509,6 +509,7 @@ service vendor.rmt_storage /vendor/bin/rmt_storage
 service vendor.tftp_server /vendor/bin/tftp_server
    class core
    user root
+   disabled
 
 service vendor.port-bridge /system/vendor/bin/port-bridge
     class main
@@ -521,13 +522,14 @@ service vendor.netmgrd /system/vendor/bin/netmgrd
     class main
     disabled
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service vendor.ipacm /system/vendor/bin/ipacm
     class main
     user radio
     group radio inet
-    disabled
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service vendor.dataqti /system/vendor/bin/qti
     class main
