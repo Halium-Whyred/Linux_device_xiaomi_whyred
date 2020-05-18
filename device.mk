@@ -122,28 +122,28 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 # Bluetooth
-PRODUCT_PACKAGES += \
-    libbthost_if
+# PRODUCT_PACKAGES += \
+#     libbthost_if
 
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # ANT+
-PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library
+# PRODUCT_PACKAGES += \
+#     AntHalService \
+#     com.dsi.ant.antradio_library
 
-PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
+# PRODUCT_COPY_FILES += \
+#     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
 
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
     android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
-    libxml2 \
-    Snap
+    libxml2
+#     Snap
 
 # CNE
 PRODUCT_PACKAGES += \
@@ -173,8 +173,8 @@ PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 
 # Doze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
+# PRODUCT_PACKAGES += \
+#     XiaomiDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -187,18 +187,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/init.qti.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qseecomd.sh
 
 # Fingerprint feature
-PRODUCT_PACKAGES += \
-    fingerprintd \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660
+# PRODUCT_PACKAGES += \
+#     fingerprintd \
+#     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
+# PRODUCT_COPY_FILES += \
+#     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
-#FM
-PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio
+# FM
+# PRODUCT_PACKAGES += \
+#     FM2 \
+#     libqcomfm_jni \
+#     qcom.fmradio
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
@@ -238,8 +238,8 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0-java
 
 # IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common
+# PRODUCT_PACKAGES += \
+#     ims-ext-common
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -270,7 +270,7 @@ PRODUCT_COPY_FILES += \
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-    
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/sdm660-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sdm660-snd-card_Button_Jack.kl \
@@ -287,8 +287,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sdm660
 
 # LiveDisplay native
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@1.0-service-sdm
+# PRODUCT_PACKAGES += \
+#     vendor.lineage.livedisplay@1.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -309,18 +309,18 @@ PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
 # OMX
-PRODUCT_PACKAGES += \
-    libc2dcolorconvert \
-    libmm-omxcore \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc \
-    libstagefrighthw
+# PRODUCT_PACKAGES += \
+#     libc2dcolorconvert \
+#     libmm-omxcore \
+#     libOmxAacEnc \
+#     libOmxAmrEnc \
+#     libOmxCore \
+#     libOmxEvrcEnc \
+#     libOmxG711Enc \
+#     libOmxQcelp13Enc \
+#     libOmxVdec \
+#     libOmxVenc \
+#     libstagefrighthw
 
 # Power
 PRODUCT_PACKAGES += \
@@ -335,14 +335,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-qti.xml \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/qti_whitelist.xml
 
-
 # QMI
 PRODUCT_PACKAGES += \
     libjson
 
 # XiaomiParts
-PRODUCT_PACKAGES += \
-    XiaomiParts
+# PRODUCT_PACKAGES += \
+#     XiaomiParts
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -356,11 +355,11 @@ PRODUCT_PACKAGES += \
     init.msm.usb.configfs.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
-    init.qcom.rc \
+#     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
-    init.target.rc \
+ #    init.target.rc \
     ueventd.qcom.rc \
     fstab.qcom
 
@@ -399,11 +398,11 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service
 
 # Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
+# PRODUCT_PACKAGES += \
+#     telephony-ext
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+# PRODUCT_BOOT_JARS += \
+#     telephony-ext
 
 # TextClassifier
 PRODUCT_PACKAGES += \
@@ -424,7 +423,8 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
 # VNDK
-PRODUCT_PACKAGES += vndk-sp
+PRODUCT_PACKAGES += \
+    vndk-sp
 
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v27/arm/arch-arm-armv7-a-neon/shared/vndk-core/android.frameworks.sensorservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.frameworks.sensorservice@1.0-v27.so \
@@ -432,24 +432,24 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
-    hostapd \
-    hostapd_cli \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
-    libwifi-hal-qcom \
-    libwpa_client \
-    vendor.qti.hardware.wifi.supplicant@1.0_vendor \
-    wificond \
-    wifilogd \
-    wpa_supplicant \
-    wpa_supplicant.conf
+    android.hardware.wifi@1.0-service
+#     hostapd \
+#     hostapd_cli \
+#     libqsap_sdk \
+#     libQWiFiSoftApCfg \
+#     libwifi-hal-qcom \
+#     libwpa_client \
+#     vendor.qti.hardware.wifi.supplicant@1.0_vendor \
+#     wificond \
+#     wifilogd \
+#     wpa_supplicant \
+#     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \
     $(LOCAL_PATH)/wifi/hostapd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd_default.conf \
     $(LOCAL_PATH)/wifi/hostapd.deny:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.deny \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+#     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+#     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
