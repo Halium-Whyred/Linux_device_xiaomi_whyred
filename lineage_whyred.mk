@@ -28,7 +28,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, device/xiaomi/whyred/device.mk)
 
 # Inherit from phh vndk vendor.
-# $(call inherit-product, vendor/vndk/vndk.mk)
+$(call inherit-product, vendor/vndk/vndk.mk)
 
 # Inherit some common Halium stuff.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/halium.mk)
@@ -49,3 +49,9 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="whyred-user 8.1.0 OPM1.171019.011 V9.5.11.0.OEIMIFA release-keys"
 BUILD_FINGERPRINT := xiaomi/whyred/whyred:8.1.0/OPM1.171019.011/V9.5.11.0.OEIMIFA:user/release-keys
+
+# VNDK config files
+PRODUCT_COPY_FILES += \
+#         device/xiaomi/whyred/vndk-detect:system/bin/vndk-detect \
+	device/xiaomi/whyred/vndk/vndk.rc:system/etc/init/vndk.rc \
+	device/xiaomi/whyred/vndk/ld.config.26.txt:system/etc/ld.config.26.txt

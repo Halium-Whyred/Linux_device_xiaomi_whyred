@@ -42,3 +42,18 @@ LOCAL_MODULE := vndk-sp
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := $(addsuffix .vndk-sp-gen,$(VNDK_SP_LIBRARIES))
 include $(BUILD_PHONY_PACKAGE)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.vndk-26.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/init.vndk-26.rc
+LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)/init/gsi
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := vndk-detect
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES    := bin/vndk-detect
+include $(BUILD_PREBUILT)
