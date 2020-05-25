@@ -17,11 +17,14 @@
 # Release name
 PRODUCT_RELEASE_NAME := whyred
 
+# Inherit some common Embedded stuff.
 $(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-# $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/lineage_base_telephony.mk)
+
+# Inherit some common LineageOS stuff.
 # $(call inherit-product, vendor/lineage/product/common.mk)
 
 # Inherit from whyred device
@@ -52,6 +55,6 @@ BUILD_FINGERPRINT := xiaomi/whyred/whyred:8.1.0/OPM1.171019.011/V9.5.11.0.OEIMIF
 
 # VNDK config files
 PRODUCT_COPY_FILES += \
-#         device/xiaomi/whyred/vndk-detect:system/bin/vndk-detect \
+        device/xiaomi/whyred/vndk/vndk-detect:system/bin/vndk-detect \
 	device/xiaomi/whyred/vndk/vndk.rc:system/etc/init/vndk.rc \
 	device/xiaomi/whyred/vndk/ld.config.26.txt:system/etc/ld.config.26.txt
